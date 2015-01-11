@@ -1,8 +1,8 @@
 'use strict';
 
-app.factory('UserServices',
+app.factory('userService',
     function ($resource, baseServiceUrl, authService) {
-        var userServices = $resource(
+        var userService = $resource(
             baseServiceUrl + '/api/user/ads/:id',
             null,
             {
@@ -16,7 +16,7 @@ app.factory('UserServices',
                 },
                 'deactivateAd': {
                     method: 'PUT',
-                    url: baseUrl + "user/ads/deactivate/:id",
+                    url: baseServiceUrl + "user/ads/deactivate/:id",
                     headers: authService.getAuthHeaders(),
                     params: { id: "@id" }
                 },
@@ -29,7 +29,7 @@ app.factory('UserServices',
                     method: 'PUT',
                     headers: authService.getAuthHeaders(),
                     params: { id: "@id" },
-                    url: baseUrl + "user/ads/republishad/:id"
+                    url: baseServiceUrl + "user/ads/republishad/:id"
                 },
                 'delete': {
                     method: 'DELETE',
@@ -42,22 +42,22 @@ app.factory('UserServices',
 
         return {
             getUserAds: function(params, success, error) {
-                return userServices.getUserAds(params, success, error);
+                return userService.getUserAds(params, success, error);
             },
             publishAd: function(ad, success, error) {
-                return userServices.publishAd(ad, success, error);
+                return userService.publishAd(ad, success, error);
             },
             deactivateAd: function(id, success, error) {
-                return userServices.deactivateAd({id: id}, success, error);
+                return userService.deactivateAd({id: id}, success, error);
             },
             updateAd: function(ad, success, error) {
-                return userServices.deactivateAd(ad, success, error);
+                return userService.deactivateAd(ad, success, error);
             },
             rePublishAd: function(ad, success, error) {
-                return userServices.deactivateAd(ad, success, error);
+                return userService.deactivateAd(ad, success, error);
             },
             delete: function(ad, success, error) {
-                return userServices.deactivateAd(ad, success, error);
+                return userService.deactivateAd(ad, success, error);
             }
         }
     }

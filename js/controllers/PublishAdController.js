@@ -4,7 +4,7 @@ app.controller('PublishAdController',
          townsService, userService, notifyService){
         $scope.adData = {townId: null, categoryId: null};
         $scope.categories = categoriesService.getCategories();
-        $scope.towns = townService.getTowns();
+        $scope.towns = townsService.getTowns();
 
         $scope.createNewAd = function(adData) {
             userService.publishAd(adData,
@@ -13,7 +13,7 @@ app.controller('PublishAdController',
                 $location.path("/user/ads");
             },
                 function error(err){
-                    notyfiService.showError();
+                    notifyService.showError();
                 }
             );
         };
