@@ -14,18 +14,20 @@
                     <div>{{ad.text}}</div>
                 </div>
                 <div>
-                    <strong>Name:</strong>
-                    <div>{{ad.ownerName}}</div>
+                    <strong>Category:</strong>
+                    <div>{{ad.categoryName}}</div>
                 </div>
                 <div>
-                    <strong>Email:</strong>
-                    <div>{{ad.ownerEmail}}</div>
-                </div>
-                <div>
-                    <strong>Phone:</strong>
-                    <div>{{ad.ownerPhone}}</div>
+                    <strong>Town:</strong>
+                    <div>{{ad.townName}}</div>
                 </div>
             </div>
+        </div>
+        <hr class="vertical"/>
+        <div>
+            <div>Status:</div>
+            <div>{{ad.status}}</div>
+            <div> <a ng-click="adDeactivation(ad.id)" class="button">Deactivate</a>
         </div>
     </li>
 </ul>

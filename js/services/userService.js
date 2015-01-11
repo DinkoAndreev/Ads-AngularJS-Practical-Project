@@ -31,7 +31,7 @@ app.factory('userService',
                     params: { id: "@id" },
                     url: baseServiceUrl + "user/ads/republishad/:id"
                 },
-                'delete': {
+                'deleteAd': {
                     method: 'DELETE',
                     headers: authService.getAuthHeaders(),
                     params: { id: "@id" }
@@ -51,13 +51,13 @@ app.factory('userService',
                 return userService.deactivateAd({id: id}, success, error);
             },
             updateAd: function(ad, success, error) {
-                return userService.deactivateAd(ad, success, error);
+                return userService.updateAd(ad, success, error);
             },
             rePublishAd: function(ad, success, error) {
-                return userService.deactivateAd(ad, success, error);
+                return userService.rePublishAd(ad, success, error);
             },
-            delete: function(ad, success, error) {
-                return userService.deactivateAd(ad, success, error);
+            deleteAd: function(ad, success, error) {
+                return userService.deleteAd(ad, success, error);
             }
         }
     }
