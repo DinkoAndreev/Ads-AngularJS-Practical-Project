@@ -8,18 +8,26 @@ app.constant('pageSize', 2);
 app.config(function ($routeProvider) {
 
     $routeProvider.when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: 'templates/home.html',
         controller: 'HomeController'
     });
 
     $routeProvider.when('/login', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'templates/login.html',
         controller: 'LoginController'
     });
 
     $routeProvider.when('/register', {
-        templateUrl: 'views/register.html',
+        templateUrl: 'templates/register.html',
         controller: 'RegisterController'
+    });
+    $routeProvider.when('/user/ads', {
+        templateUrl: 'templates/user/user-ads.html',
+        controller: 'UserAdsController'
+    });
+    $routeProvider.when('//user/publish-ad', {
+        templateUrl: 'templates/publish-ad.html',
+        controller: 'PublishAdController'
     });
 
     $routeProvider.otherwise(

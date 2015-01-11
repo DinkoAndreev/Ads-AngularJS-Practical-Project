@@ -61,6 +61,21 @@ ul.ads li {
     padding: 10px;
     box-shadow: rgba(80, 126, 50, 0.5) 0.5px 0.5px 3px;
 }
+.formbox{
+    width: 100%;
+    display: block;
+    background: #A9D18E;
+    border: #507E32 1px solid;
+    border-radius: 10px;
+    margin: 15px 0;
+    padding: 10px;
+    box-shadow: rgba(80, 126, 50, 0.5) 0.5px 0.5px 3px;
+}
+.box div{
+    position: relative;
+}
+
+
 
 .box h1 {
     margin: 0 0 10px 0;
@@ -177,4 +192,14 @@ ul.sidebar-menu li a, ul.sidebar-menu li a:focus {
 .ad-image {
     max-width: 150px;
     max-height: 150px;
+}
+hr{
+    width: 80%;
+    border-top: 1px solid #69944D;
+}
+.addtextesc{
+    display: block;
+}
+.addescr div{
+    display: inline;
 }

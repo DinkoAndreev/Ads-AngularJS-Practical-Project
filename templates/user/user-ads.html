@@ -1,0 +1,40 @@
+<ul class="ads">
+    <li ng-repeat="ad in ads.ads" class="formbox" data-id="{{ad.id}}">
+        <div>
+            <h1>{{ad.title}}</h1>
+            <div>{{ad.date | date:'dd-MMM-yyyy'}}</div>
+        </div>
+        <div>
+            <div ng-if='ad.imageDataUrl'>
+                <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+            </div>
+            <div>
+                <div>
+                    <strong>Text:</strong>
+                    <div>{{ad.text}}</div>
+                </div>
+                <div>
+                    <strong>Name:</strong>
+                    <div>{{ad.ownerName}}</div>
+                </div>
+                <div>
+                    <strong>Email:</strong>
+                    <div>{{ad.ownerEmail}}</div>
+                </div>
+                <div>
+                    <strong>Phone:</strong>
+                    <div>{{ad.ownerPhone}}</div>
+                </div>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+            items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+            max-size="9" boundary-links="true">
+</pagination>
+
+<div ng-if="ads.ads.length==0" class="box no-data">
+    No ads found.
+</div>
