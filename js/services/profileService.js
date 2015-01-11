@@ -29,7 +29,7 @@ app.factory('profileService',
                 return profileService.edit(profile, success, error);
             },
             changePassword: function (passwordData, success, error) {
-                return changePassword.newPassword(passwordData, success, error);
+                return profileService.changePassword(passwordData, success, error);
             }
         }
     }

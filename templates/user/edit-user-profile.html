@@ -15,13 +15,13 @@
     </p>
     <p>
         <label for="town">Town:</label>
-        <select id="town" ng-model="userData.townId">
+        <select id="town" ng-model="adData.townId">
             <option value="null">(None)</option>
             <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
         </select>
     </p>
     <p>
-        <a ng-click="edit(userData)" class="button">Update</a>
+        <a ng-click="updateProfile(userData)" class="button">Update</a>
         <a href="#/" class="link">Cancel</a>
     <p>
 </div>
@@ -30,19 +30,19 @@
     <hr>
     <p>
     <p>
-        <label for="oldpassword">Username:</label>
+        <label for="oldpassword">Old Password:</label>
         <input type="text" id="oldpassword" ng-model="passwordData.oldPassword" required />
     </p>
     <p>
-        <label for="password">Password:</label>
+        <label for="password">New Password:</label>
         <input type="password" id="password" ng-model="passwordData.newPassword" required />
     </p>
     <p>
-        <label for="confirmPassword">Confirm password:</label>
+        <label for="confirmPassword">Confirm new password:</label>
         <input type="password" id="confirmPassword" ng-model="passwordData.confirmPassword" required />
     </p>
     <p>
-        <a ng-click="newPassword(passwordData)" class="button">Change Password</a>
+        <a ng-click="editPassword(passwordData)" class="button">Change Password</a>
         <a href="#/" class="link">Cancel</a>
     <p>
 </div>
