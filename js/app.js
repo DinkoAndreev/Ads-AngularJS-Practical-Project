@@ -25,8 +25,8 @@ app.config(function ($routeProvider) {
         templateUrl: 'templates/user/user-ads.html',
         controller: 'UserAdsController'
     });
-    $routeProvider.when('//user/publish-ad', {
-        templateUrl: 'templates/publish-ad.html',
+    $routeProvider.when('/user/ads/publish', {
+        templateUrl: 'templates/user/publish-ad.html',
         controller: 'PublishAdController'
     });
 

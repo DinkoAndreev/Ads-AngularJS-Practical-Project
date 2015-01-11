@@ -1,19 +1,19 @@
 'use strict';
 app.controller('PublishAdController',
     function($scope, $location, categoriesService,
-         townService, userSevice, notyService){
+         townsService, userService, notifyService){
         $scope.adData = {townId: null, categoryId: null};
         $scope.categories = categoriesService.getCategories();
         $scope.towns = townService.getTowns();
 
         $scope.createNewAd = function(adData) {
-            userSevice.publishAd(adData,
+            userService.publishAd(adData,
             function success() {
-                no.showInfo("Advertisement submitted for approval. Once approved, it will be published.");
+                notifyService.showInfo("Advertisement submitted for approval. Once approved, it will be published.");
                 $location.path("/user/ads");
             },
                 function error(err){
-                    notyService.showError();
+                    notyfiService.showError();
                 }
             );
         };
